@@ -11,11 +11,18 @@ namespace PhilipsHueService
 {
     public static class PhilipsHueService
     {
-        private static readonly Serilog.Core.Logger log = new LoggerConfiguration().WriteTo.File("D:\\Logs\\PhilipsHue\\log.txt").CreateLogger(); 
+        private static readonly Serilog.Core.Logger log = new LoggerConfiguration().WriteTo.File("D:\\Logs\\PhilipsHue\\log.txt").CreateLogger();
+
+        //Can be found using this url when the bridge is conencted to the local network https://discovery.meethue.com/
+        static string philipsHueBrigeIp = "";
+
+        //Can generate username by using the playgroud https://192.168.0.159/debug/clip.html 
+        //Steps how to https://developers.meethue.com/develop/get-started-2/ 
+        static string generatedUsername = "";
 
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri("")
+            BaseAddress = new Uri($"http://{philipsHueBrigeIp}/api/{generatedUsername}/")
         };
 
         #region Lights
@@ -92,7 +99,7 @@ namespace PhilipsHueService
             try
             {
                 //This is being called from the setters in of the model used for the MVVM patten. So need to be synchronous
-                HttpResponseMessage response = _client.PutAsync($"lights/{lightId}/state", JsonContent.Create(new { on = on, ct = 1000000 / colourTemp, bri = 254 * brightness / 100 })).Result;
+               HttpResponseMessage response = _client.PutAsync($"lights/{lightId}/state", JsonContent.Create(new { on = on, ct = 1000000 / colourTemp, bri = 254 * brightness / 100 })).Result;
 
                 response.EnsureSuccessStatusCode();
 
