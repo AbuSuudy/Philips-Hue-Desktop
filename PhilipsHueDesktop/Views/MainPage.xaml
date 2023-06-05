@@ -1,0 +1,112 @@
+﻿
+    
+    <Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhilipsHueDesktop"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.UI.Xaml.Controls"
+    x:Class="PhilipsHueDesktop.MainPage"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+     Background= "{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.BackgroundColour}" >
+
+
+
+        
+    <Grid>
+        
+        
+
+       <!--<NavigationView IsSettingsVisible="False">
+            <NavigationView.MenuItems >
+                <NavigationViewItem Icon="Highlight" Content="Light" Tag="SamplePage1" Foreground="{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.TextColour}"/>
+                <NavigationViewItem Icon="Sync" Content="Scene" Tag="SamplePage2" Foreground="{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.TextColour}" />
+                <NavigationViewItem Icon="RepeatAll" Content="Dials" Tag="SamplePage3" Foreground="{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.TextColour}"/>
+
+            </NavigationView.MenuItems>
+        </NavigationView>-->
+
+
+
+        <Grid VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <controls:RadialGauge
+                  x:Name="RadialGaugeBrightness"
+                  Grid.Column="1"
+                  Minimum="1"
+                  Value= "{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.Brightness}" 
+                  Maximum="100"
+                  StepSize="5"
+                  IsInteractive="True"
+                  TickSpacing="0"
+                  ScaleWidth="4"
+                  MinAngle="245"
+                  MaxAngle="119"
+                  Unit="Brightness % 🌞"
+                  ValueStringFormat="N0"
+                  NeedleWidth="4"
+                  NeedleLength="100"
+                  TickLength="0"
+                  TickWidth="0"
+                  ScalePadding="0"
+                  ScaleTickWidth="2" 
+                  Foreground = "{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.TextColour}"/>
+
+
+
+            <ToggleSwitch  Grid.Column="2" FontSize="55" OffContent="❗💡" OnContent="  💡" IsOn="{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.State}"  HorizontalAlignment="Center">
+                <ToggleSwitch.Resources>
+                    <SolidColorBrush x:Key="ToggleSwitchKnobFillOffPointerOver" Color="ForestGreen"/>
+                    <SolidColorBrush x:Key="ToggleSwitchKnobFillOff" Color="ForestGreen"/>
+
+                    <SolidColorBrush x:Key="ToggleSwitchKnobFillOnPointerOver" Color="ForestGreen"/>
+                    <SolidColorBrush x:Key="ToggleSwitchKnobFillOn" Color="ForestGreen"/>
+
+                </ToggleSwitch.Resources>
+            </ToggleSwitch>
+
+            <controls:RadialGauge
+                  x:Name="RadialGaugeKelvin"
+                  Grid.Column="3"                
+                  Minimum="2000"
+                  Value= "{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.Kelvin}" 
+                  Maximum="6500"
+                  StepSize="100"
+                  IsInteractive="True"
+                  TickSpacing="0"
+                  ScaleWidth="4"
+                  MinAngle="245"
+                  MaxAngle="119"
+                  Unit="Kelvin 🌡️"
+                  ValueStringFormat="N0"
+                  NeedleWidth="4"
+                  NeedleLength="100"
+                  TickLength="0"
+                  TickWidth="0"
+                  ScalePadding="0"
+                  ScaleTickWidth="2"              
+                 Foreground = "{x:Bind Mode=TwoWay, Path=ViewModel.lightControl.TextColour}"/>
+
+
+
+        </Grid>
+
+
+
+
+
+
+    </Grid>
+    
+
+</Page>
