@@ -16,7 +16,7 @@ namespace PhilipsHueService
         //Can be found using this url when the bridge is conencted to the local network https://discovery.meethue.com/
         private static string philipsHueBrigeIp = "";
 
-        //Can generate username by using the playgroud https://192.168.0.159/debug/clip.html 
+        //Can generate username by using the playgroud https://{philipsHueBrigeIp}/debug/clip.html 
         //Steps how to https://developers.meethue.com/develop/get-started-2/ 
         private static string generatedUsername = "";
 
