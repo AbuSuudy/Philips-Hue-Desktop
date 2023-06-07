@@ -1,7 +1,8 @@
 # Philips Hue Desktop
 
 <p align="center">
-<img  src="https://github.com/AbuSuudy/Philips-Hue-Desktop/assets/15980314/69c59267-42c2-4c98-8262-6fa2d1c100c8">
+<img alt="Square44x44Logo altform-unplated_targetsize-256" src="https://github.com/AbuSuudy/Philips-Hue-Desktop/assets/15980314/24557688-10ec-495b-b963-fbb96cb6f7e3">
+
 
 </p>
 Often times when I'm on my desktop and the blinding lights of the screen in a darkroom is hurting my eyes 👀. My phone that's able to control the Philips hue light is on the opposite of my room. The simple answer would be to pick up my phone to control my lights or just use the light switch. Nope, that would be too easy so let me develop a desktop application app that uses the Philips hue API so it would allow me do this from the comfort of my Herman Miller throne 💺 <br> <br> 
