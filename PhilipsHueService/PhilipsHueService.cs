@@ -14,15 +14,15 @@ namespace PhilipsHueService
         private static readonly Serilog.Core.Logger log = new LoggerConfiguration().WriteTo.File("D:\\Logs\\PhilipsHue\\log.txt").CreateLogger();
 
         //Can be found using this url when the bridge is conencted to the local network https://discovery.meethue.com/
-        private static string philipsHueBrigeIp = "";
+        private static string philipsHueBridgeIp  = "";
 
-        //Can generate username by using the playgroud https://{philipsHueBrigeIp}/debug/clip.html 
+        //Can generate username by using the playgroud https://{philipsHueBridgeIp}/debug/clip.html 
         //Steps how to https://developers.meethue.com/develop/get-started-2/ 
         private static string generatedUsername = "";
 
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri($"http://{philipsHueBrigeIp}/api/{generatedUsername}/")
+            BaseAddress = new Uri($"http://{philipsHueBridgeIp}/api/{generatedUsername}/")
         };
 
         #region Lights
