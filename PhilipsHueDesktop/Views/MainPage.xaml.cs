@@ -1,5 +1,7 @@
 ﻿using PhilipsHueDesktop.ViewModel;
+using Windows.ApplicationModel.Core;
 using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -15,8 +17,13 @@ namespace PhilipsHueDesktop
     {
         public MainPage()
         {
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Colors.Transparent;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            ApplicationView.GetForCurrentView().TitleBar.InactiveBackgroundColor = Colors.Transparent;
 
-            this.InitializeComponent();
+
+            this.InitializeComponent();           
             this.ViewModel = new LightControlViewModel( );
 
 

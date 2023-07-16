@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Media;
 namespace PhilipsHueDesktop.Model
 {
@@ -69,6 +70,8 @@ namespace PhilipsHueDesktop.Model
                 PhilipsHueService.PhilipsHueService.LightState(1, _state, Kelvin, Brightness);
                 BackgroundColour = colours.FirstOrDefault(x => x.Key == KelvinToRGB.AppColours.Backgroud).Value;
                 TextColour = colours.FirstOrDefault(x => x.Key == KelvinToRGB.AppColours.Text).Value;
+                ApplicationView.GetForCurrentView().TitleBar.ButtonForegroundColor = TextColour.Color;
+                ApplicationView.GetForCurrentView().TitleBar.InactiveForegroundColor = TextColour.Color;
 
             }
         }
