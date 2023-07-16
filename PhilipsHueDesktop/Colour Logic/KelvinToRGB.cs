@@ -21,7 +21,7 @@ namespace PhilipsHueDesktop.Colour_Logic
 
         public static List<KeyValuePair<AppColours, SolidColorBrush>> Dim(double brightness)
         {
-			if (brightness < 50)
+			if (brightness < 70)
             {
 				textColor = new SolidColorBrush(Colors.White);
 			}

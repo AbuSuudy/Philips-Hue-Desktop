@@ -71,7 +71,7 @@ namespace PhilipsHueDesktop.Model
                 BackgroundColour = colours.FirstOrDefault(x => x.Key == KelvinToRGB.AppColours.Backgroud).Value;
                 TextColour = colours.FirstOrDefault(x => x.Key == KelvinToRGB.AppColours.Text).Value;
                 ApplicationView.GetForCurrentView().TitleBar.ButtonForegroundColor = TextColour.Color;
-                ApplicationView.GetForCurrentView().TitleBar.InactiveForegroundColor = TextColour.Color;
+                ApplicationView.GetForCurrentView().TitleBar.ButtonInactiveForegroundColor = TextColour.Color;
 
             }
         }
