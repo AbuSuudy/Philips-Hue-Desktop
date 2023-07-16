@@ -32,9 +32,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="PhilipsHueDesktop.App">
       <uap:VisualElements
-        DisplayName="PhilipsHueDesktop"
         Description="PhilipsHueDesktop"
-        BackgroundColor="transparent"  Square44x44Logo="Assets\Square44x44Logo.png" Square150x150Logo="Assets\Square44x44Logo.png">
+        BackgroundColor="transparent"  Square44x44Logo="Assets\Square44x44Logo.png" Square150x150Logo="Assets\Square44x44Logo.png" DisplayName="Hue Hub">
         <uap:DefaultTile ShortName="Hue"  Wide310x150Logo="Assets\WideTile.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo"/>

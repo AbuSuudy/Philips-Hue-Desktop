@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Media;
 
 namespace PhilipsHueDesktop.Colour_Logic
 {
     public static class KelvinToRGB
     {
-		//https://tannerhelland.com/2012/09/18/convert-temperature-rgb-algorithm-code.html
-
+        //https://tannerhelland.com/2012/09/18/convert-temperature-rgb-algorithm-code.html
+        
 		public  enum AppColours
 		{
 			Backgroud,
@@ -34,7 +35,7 @@ namespace PhilipsHueDesktop.Colour_Logic
 
 			backgroudcolor = Color.FromArgb(Convert.ToByte(alpha), backgroudcolor.R, backgroudcolor.G, backgroudcolor.B);
 
-			return new  List<KeyValuePair<AppColours, SolidColorBrush>>() {
+            return new  List<KeyValuePair<AppColours, SolidColorBrush>>() {
                     new KeyValuePair<AppColours, SolidColorBrush>(AppColours.Backgroud, new SolidColorBrush(backgroudcolor)),
 					new KeyValuePair<AppColours, SolidColorBrush>(AppColours.Text, textColor),
 				};
@@ -96,8 +97,15 @@ namespace PhilipsHueDesktop.Colour_Logic
 			}
 
 			backgroudcolor = Color.FromArgb(backgroudcolor.A, Convert.ToByte(red), Convert.ToByte(green), Convert.ToByte(blue));
+            
+			ApplicationView.GetForCurrentView().TitleBar.BackgroundColor = backgroudcolor;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = backgroudcolor;
+            ApplicationView.GetForCurrentView().TitleBar.InactiveBackgroundColor = backgroudcolor;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonInactiveBackgroundColor = backgroudcolor;
+            ApplicationView.GetForCurrentView().TitleBar.InactiveForegroundColor = Colors.Black;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonInactiveForegroundColor = Colors.Black;
 
-			return new SolidColorBrush(backgroudcolor);
+            return new SolidColorBrush(backgroudcolor);
 		}
 
 	}
